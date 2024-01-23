@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "prepare": "nuxt prepare",
+    "generate": "nuxt generate"
+  },
+  "devDependencies": {
+    "@nuxt/ui": "^2.12.3",
+    "docx-preview": "^0.3.0",
+    "dom-to-image": "^2.6.0",
+    "file-saver": "^2.0.5",
+    "nuxt": "^3.9.3"
+  }
+}
