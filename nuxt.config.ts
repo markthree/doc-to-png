@@ -4,11 +4,9 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
+  ssr: false,
   modules: ["@nuxt/ui"],
   nitro: {
-    rollupConfig: {
-      external: ["docx-preview"],
-    },
     modules: [
       nitroPort({
         port: 9000,
