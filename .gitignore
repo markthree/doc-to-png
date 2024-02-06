@@ -1,5 +1,6 @@
 dist
 .nuxt
 .output*
+*.exe
 node_modules
 yarn-error.log
