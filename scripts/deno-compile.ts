@@ -14,7 +14,9 @@ writeFile(
   `import { execa } from "https://deno.land/x/easy_std/src/process.ts";
 
 import("./server/index.mjs").then(() => {
-  execa(['explorer', "http://localhost:3000"])
+  const port = Deno.env.get("NITRO_PORT") || Deno.env.get("PORT") || 3000
+  const url = 'http://localhost:' + port
+  execa(['explorer', url])
 })
 `,
 );

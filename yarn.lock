@@ -4190,6 +4190,11 @@ negotiator@0.6.3, negotiator@^0.6.3:
   resolved "https://registry.npmmirror.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
 
+nitro-port-module@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmmirror.com/nitro-port-module/-/nitro-port-module-0.0.3.tgz#e1a7c4cf425f64d38153595accbb451242d9a563"
+  integrity sha512-JvMkPXpI/PyCEhGa4CkqLpuCdrXo1xWSt5bgQAg1kWAIPZsLqwHE6bjTIMIrwDFFwurWP3cNqZjXdGNgYxfZSw==
+
 nitropack@^2.8.1:
   version "2.8.1"
   resolved "https://registry.npmmirror.com/nitropack/-/nitropack-2.8.1.tgz#9132cf8c01417c32ee45338e1d3fd00cac6219f8"
