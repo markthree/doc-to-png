@@ -6,6 +6,9 @@ export default defineNuxtConfig({
   },
   modules: ["@nuxt/ui"],
   nitro: {
+    rollupConfig: {
+      external: ["docx-preview"],
+    },
     modules: [
       nitroPort({
         port: 9000,
