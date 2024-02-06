@@ -20,8 +20,8 @@
 
 <script setup>
 import { renderAsync } from "docx-preview"
-import { saveAs } from "file-saver"
-import { toBlob } from "dom-to-image"
+import fileSaver from "file-saver"
+import domtoimage from "dom-to-image"
 
 const preview = ref(null)
 
@@ -70,13 +70,15 @@ function download() {
     return
   }
 
-  toBlob(
-    document.querySelector(
-      "#__nuxt > div.text-gray-500.text-center > div > section"
+  domtoimage
+    .toBlob(
+      document.querySelector(
+        "#__nuxt > div.text-gray-500.text-center > div > section"
+      )
     )
-  ).then(function (blob) {
-    saveAs(blob, `${name.value}.png`)
-  })
+    .then(function (blob) {
+      fileSaver.saveAs(blob, `${name.value}.png`)
+    })
 }
 </script>
 

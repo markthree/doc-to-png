@@ -1,4 +1,4 @@
 dist
 .nuxt
-.output
+.output*
 node_modules
