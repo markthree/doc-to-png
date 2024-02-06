@@ -6,7 +6,7 @@
     "preview": "nuxt preview",
     "prepare": "nuxt prepare",
     "generate": "nuxt generate",
-    "deno-compile": "tsx scripts/deno-bin-compile.ts"
+    "deno-compile": "tsx scripts/deno-compile.ts"
   },
   "devDependencies": {
     "@nuxt/ui": "^2.13.0",
