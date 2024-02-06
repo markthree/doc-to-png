@@ -1,21 +1,25 @@
 <template>
-  <div class="flex justify-end space-x-5 p-5">
-    <UButton icon="i-heroicons-inbox" color="gray" @click="upload"
-      >上传文档</UButton
-    >
-    <UButton
-      icon="i-heroicons-photo"
-      :color="Boolean(uploaded) ? 'cyan' : 'gray'"
-      @click="download"
-      >下载图片</UButton
-    >
+  <div class="flex justify-between items-center p-5">
+    <Ad />
+    <div class="flex justify-end space-x-5">
+      <UButton icon="i-heroicons-inbox" color="gray" @click="upload">
+        {{ uploaded ? "重新选择文档" : "选择文档" }}
+      </UButton>
+      <UButton
+        icon="i-heroicons-photo"
+        :color="Boolean(uploaded) ? 'cyan' : 'gray'"
+        @click="download"
+        >下载图片</UButton
+      >
+    </div>
   </div>
 
-  <div class="text-gray-500 text-center" ref="preview">
-    <p>
-      <UIcon name="i-heroicons-light-bulb" />
-      请先上传文档
-    </p>
+  <div
+    class="text-gray-500 justify-center space-x-2 flex items-center"
+    ref="preview"
+  >
+    <UIcon name="i-heroicons-light-bulb" />
+    <span>请先上传文档</span>
   </div>
 
   <UNotifications />
@@ -86,11 +90,14 @@ function download() {
 </script>
 
 <style>
-#__nuxt > div.text-gray-500.text-center > div {
+#__nuxt > div.text-gray-500.justify-center.space-x-2.flex.items-center > div {
   background-color: transparent;
 }
 
-#__nuxt > div.text-gray-500.text-center > div > section {
+#__nuxt
+  > div.text-gray-500.justify-center.space-x-2.flex.items-center
+  > div
+  > section {
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 </style>
