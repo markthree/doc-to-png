@@ -3,7 +3,10 @@
     <UButton icon="i-heroicons-inbox" color="gray" @click="upload"
       >上传文档</UButton
     >
-    <UButton icon="i-heroicons-photo" color="gray" @click="download"
+    <UButton
+      icon="i-heroicons-photo"
+      :color="Boolean(uploaded) ? 'cyan' : 'gray'"
+      @click="download"
       >下载图片</UButton
     >
   </div>
@@ -25,7 +28,7 @@ import domtoimage from "dom-to-image"
 
 const preview = ref(null)
 
-let uploaded = false
+const uploaded = ref(false)
 
 const toast = useToast()
 
@@ -36,7 +39,7 @@ function upload() {
   const input = document.createElement("input")
   input.type = "file"
   // 让 file input 只能接收 docx 和 doc 格式
-  input.accept = "docx,doc"
+  input.accept = ".docx, .doc"
   // 不支持多文件
   input.multiple = false
   // 不需要显示在页面中
@@ -48,7 +51,7 @@ function upload() {
     name.value = file.name.split(".")[0]
     renderAsync(file, preview.value)
       .then(() => {
-        uploaded = true
+        uploaded.value = true
       })
       .finally(() => {
         // 成功后移除 input
@@ -60,7 +63,7 @@ function upload() {
 }
 
 function download() {
-  if (!uploaded) {
+  if (!uploaded.value) {
     toast.remove("toast")
     toast.add({
       id: "toast",
